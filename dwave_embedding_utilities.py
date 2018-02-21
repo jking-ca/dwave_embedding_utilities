@@ -515,7 +515,7 @@ class MinimizeEnergy(object):
             if _all_equal(vals):
                 unembeded[v] = vals.pop()
             else:
-                broken[v] = self._linear[v]  # broken tracks the linear energy
+                broken[v] = self._linear.get(v, 0.)  # broken tracks the linear energy
 
         # now, we want to determine the energy for each of the broken variable
         # as much as we can
